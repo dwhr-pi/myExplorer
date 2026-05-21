@@ -1,2 +1,2 @@
 # myExlorer
-Mein Datei Exprlorer ähnlich dem Mi Explorer
+Mein Datei Explorer - ähnlich dem Mi Explorer Android
