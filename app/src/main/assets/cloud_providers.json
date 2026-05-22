@@ -1,0 +1,1487 @@
+[
+  {
+    "providerId": "manual_webdav",
+    "displayName": "Manueller WebDAV-Server",
+    "category": "manuelle Server",
+    "region": "global",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "manual URL",
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "Token"
+    ],
+    "notes": "Für beliebige WebDAV-kompatible Server mit eigener URL.",
+    "securityWarnings": [
+      "HTTP nur nach ausdrücklicher Freigabe erlauben."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "manual_nextcloud",
+    "displayName": "Nextcloud (selbst gehostet)",
+    "category": "selbst gehostete Server",
+    "region": "global",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": "https://example.com/remote.php/dav/files/USERNAME/",
+    "loginType": [
+      "manuelle URL",
+      "Benutzername/Passwort",
+      "App-Passwort"
+    ],
+    "notes": "Standardpfad laut Nextcloud WebDAV-Dokumentation. Host und Nutzername müssen angepasst werden.",
+    "securityWarnings": [
+      "Nur HTTPS empfohlen.",
+      "Bei 2FA möglichst App-Passwort nutzen."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "manual_owncloud",
+    "displayName": "ownCloud (selbst gehostet)",
+    "category": "selbst gehostete Server",
+    "region": "global",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": "https://example.com/owncloud/remote.php/dav/files/USERNAME/",
+    "loginType": [
+      "manuelle URL",
+      "Benutzername/Passwort",
+      "App-Passwort"
+    ],
+    "notes": "Standardpfad laut ownCloud WebDAV-Dokumentation. Host und Nutzername müssen angepasst werden.",
+    "securityWarnings": [
+      "Nur HTTPS empfohlen.",
+      "Bei 2FA möglichst App-Passwort nutzen."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "manual_seafile",
+    "displayName": "Seafile Server",
+    "category": "selbst gehostete Server",
+    "region": "global",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token",
+      "manuelle URL"
+    ],
+    "notes": "API/WebDAV-Fähigkeit hängt von Server-Konfiguration und Version ab.",
+    "securityWarnings": [
+      "Vor Nutzung Serverkompatibilität prüfen."
+    ],
+    "status": "experimental"
+  },
+  {
+    "providerId": "manual_smb",
+    "displayName": "SMB / CIFS Freigabe",
+    "category": "lokale Netzwerkfreigaben",
+    "region": "lokal",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Für NAS, Windows- und Linux-Freigaben im lokalen Netz.",
+    "securityWarnings": [
+      "SMB nur im vertrauenswürdigen lokalen Netz verwenden."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "manual_ftp",
+    "displayName": "FTP-Server",
+    "category": "manuelle Server",
+    "region": "global",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Für Alt-Systeme und einfache Dateiserver.",
+    "securityWarnings": [
+      "FTP sendet Daten unverschlüsselt und soll klar markiert werden."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "manual_ftps",
+    "displayName": "FTPS-Server",
+    "category": "manuelle Server",
+    "region": "global",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "FTP über TLS.",
+    "securityWarnings": [
+      "Zertifikate validieren."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "manual_sftp",
+    "displayName": "SFTP-Server",
+    "category": "manuelle Server",
+    "region": "global",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token",
+      "manuelle URL"
+    ],
+    "notes": "Dateiübertragung über SSH.",
+    "securityWarnings": [
+      "Host-Key-Pinning später ergänzen."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "nextcloud_tab_digital",
+    "displayName": "tab.digital",
+    "category": "Nextcloud-Anbieter",
+    "region": "DE",
+    "freeUsable": "yes",
+    "freeStorage": "8 GB",
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Nextcloud-basierter Anbieter, Standardpfad entspricht Nextcloud.",
+    "securityWarnings": [
+      "Server-URL manuell aus Anbieter-Doku übernehmen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "nextcloud_woelkli",
+    "displayName": "woelkli",
+    "category": "Nextcloud-Anbieter",
+    "region": "CH",
+    "freeUsable": "yes",
+    "freeStorage": "1 GB",
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Datenschutzorientierter Nextcloud-Anbieter.",
+    "securityWarnings": [
+      "Server-URL manuell prüfen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "nextcloud_cloudamo",
+    "displayName": "Cloudamo",
+    "category": "Nextcloud-Anbieter",
+    "region": "EU",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Managed Nextcloud-Hosting.",
+    "securityWarnings": [
+      "URL aus Konto übernehmen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "nextcloud_thegoodcloud",
+    "displayName": "The Good Cloud",
+    "category": "Nextcloud-Anbieter",
+    "region": "NL",
+    "freeUsable": "yes",
+    "freeStorage": "1 GB",
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Gemeinschaftsorientiertes Nextcloud-Angebot.",
+    "securityWarnings": [
+      "URL aus Konto übernehmen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "nextcloud_owncube",
+    "displayName": "ownCube",
+    "category": "Nextcloud-Anbieter",
+    "region": "DE",
+    "freeUsable": "yes",
+    "freeStorage": "2 GB",
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Nextcloud/Hosting-Angebote aus Deutschland.",
+    "securityWarnings": [
+      "Server-URL je Tarif prüfen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "nextcloud_webo_hosting",
+    "displayName": "WEBO.hosting Nextcloud",
+    "category": "Nextcloud-Anbieter",
+    "region": "EU",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Gehostete Nextcloud-Instanzen.",
+    "securityWarnings": [
+      "URL je Instanz prüfen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "owncloud_infinite_scale",
+    "displayName": "ownCloud Infinite Scale",
+    "category": "ownCloud-Anbieter",
+    "region": "global",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Enterprise-/Self-Hosted-Variante mit eigener Basis-URL.",
+    "securityWarnings": [
+      "Instanzpfad aus Server-Doku übernehmen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "mailbox_drive",
+    "displayName": "mailbox.org Drive",
+    "category": "europäische Anbieter",
+    "region": "DE",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": "https://dav.mailbox.org/servlet/webdav.infostore/Userstore/",
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort"
+    ],
+    "notes": "WebDAV offiziell dokumentiert. Bei 2FA App-Passwort verwenden.",
+    "securityWarnings": [
+      "Primäre Mailadresse als Benutzername nutzen."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "koofr",
+    "displayName": "Koofr",
+    "category": "europäische Anbieter",
+    "region": "EU",
+    "freeUsable": "yes",
+    "freeStorage": "10 GB",
+    "webdavSupport": "yes",
+    "defaultUrl": "https://app.koofr.net/dav/Koofr",
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort"
+    ],
+    "notes": "Koofr verlangt für WebDAV ein anwendungsspezifisches Passwort.",
+    "securityWarnings": [
+      "WebDAV ohne App-Passwort nicht einrichten."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "mydrive",
+    "displayName": "MyDrive",
+    "category": "europäische Anbieter",
+    "region": "CH",
+    "freeUsable": "yes",
+    "freeStorage": "15 GB",
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "WebDAV wird öffentlich beworben, Endpunkt bleibt pro Konto manuell.",
+    "securityWarnings": [
+      "Serverdetails aus Konto oder Hilfeseiten übernehmen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "yandex_disk",
+    "displayName": "Yandex Disk",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "unknown",
+    "webdavSupport": "yes",
+    "defaultUrl": "https://webdav.yandex.com",
+    "loginType": [
+      "OAuth",
+      "App-Passwort",
+      "Token"
+    ],
+    "notes": "WebDAV API ist offiziell dokumentiert.",
+    "securityWarnings": [
+      "Unoffizielle Programme laut Anbieter möglichst mit App-Passwort nutzen."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "icedrive",
+    "displayName": "Icedrive",
+    "category": "freie Cloudspeicher",
+    "region": "UK",
+    "freeUsable": "yes",
+    "freeStorage": "10 GB",
+    "webdavSupport": "experimental",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "WebDAV wird laut Support ab 15. April 2026 schrittweise abgeschaltet.",
+    "securityWarnings": [
+      "Nicht für neue Installationen empfehlen."
+    ],
+    "status": "experimental"
+  },
+  {
+    "providerId": "drivehq",
+    "displayName": "DriveHQ",
+    "category": "freie Cloudspeicher",
+    "region": "US",
+    "freeUsable": "yes",
+    "freeStorage": "5 GB",
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "WebDAV wird öffentlich beworben, exakter Endpunkt soll aus Konto/Support übernommen werden.",
+    "securityWarnings": [
+      "Nur dokumentierte Serverdetails übernehmen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "filen",
+    "displayName": "Filen",
+    "category": "europäische Anbieter",
+    "region": "DE",
+    "freeUsable": "yes",
+    "freeStorage": "10 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token"
+    ],
+    "notes": "Datenschutzorientierter Speicher, WebDAV derzeit nicht fest dokumentiert.",
+    "securityWarnings": [
+      "Nur bei klarer offizieller Schnittstelle aktivieren."
+    ],
+    "status": "unknown"
+  },
+  {
+    "providerId": "mega",
+    "displayName": "MEGA",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "20 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token"
+    ],
+    "notes": "Keine generische WebDAV-Schnittstelle für diesen Katalog vorgesehen.",
+    "securityWarnings": [],
+    "status": "verified"
+  },
+  {
+    "providerId": "pcloud",
+    "displayName": "pCloud",
+    "category": "freie Cloudspeicher",
+    "region": "EU/US",
+    "freeUsable": "yes",
+    "freeStorage": "10 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token"
+    ],
+    "notes": "Öffentliche WebDAV-Angaben bleiben in diesem Katalog bewusst offen.",
+    "securityWarnings": [
+      "Nur verifizierte Endpunkte übernehmen."
+    ],
+    "status": "unknown"
+  },
+  {
+    "providerId": "internxt",
+    "displayName": "Internxt",
+    "category": "europäische Anbieter",
+    "region": "EU",
+    "freeUsable": "yes",
+    "freeStorage": "1 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token"
+    ],
+    "notes": "Zero-knowledge-orientiert, WebDAV offen gelassen.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "opendrive",
+    "displayName": "OpenDrive",
+    "category": "freie Cloudspeicher",
+    "region": "US",
+    "freeUsable": "yes",
+    "freeStorage": "5 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Für spätere Prüfung vorbereitet.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "box",
+    "displayName": "Box",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "10 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "OAuth",
+      "Token"
+    ],
+    "notes": "Keine aktive WebDAV-Standardintegration in diesem Projektfundament.",
+    "securityWarnings": [],
+    "status": "verified"
+  },
+  {
+    "providerId": "dropbox",
+    "displayName": "Dropbox",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "2 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "OAuth",
+      "Token"
+    ],
+    "notes": "Später eher über offizielle API statt WebDAV.",
+    "securityWarnings": [],
+    "status": "verified"
+  },
+  {
+    "providerId": "google_drive",
+    "displayName": "Google Drive",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "15 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "OAuth"
+    ],
+    "notes": "Für spätere API-Integration separat führen.",
+    "securityWarnings": [],
+    "status": "verified"
+  },
+  {
+    "providerId": "onedrive",
+    "displayName": "OneDrive",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "5 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "OAuth"
+    ],
+    "notes": "Für spätere API-Integration separat führen.",
+    "securityWarnings": [],
+    "status": "verified"
+  },
+  {
+    "providerId": "icloud_drive",
+    "displayName": "iCloud Drive",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "5 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort"
+    ],
+    "notes": "Keine WebDAV-Standardintegration vorgesehen.",
+    "securityWarnings": [],
+    "status": "verified"
+  },
+  {
+    "providerId": "idrive_e2",
+    "displayName": "IDrive e2",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token",
+      "Benutzername/Passwort"
+    ],
+    "notes": "Später für S3-kompatiblen Connector vorbereiten.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "wasabi",
+    "displayName": "Wasabi",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Für spätere S3-Unterstützung vorgemerkt.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "backblaze_b2",
+    "displayName": "Backblaze B2",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "10 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Für spätere S3-Unterstützung vorgemerkt.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "cloudflare_r2",
+    "displayName": "Cloudflare R2",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "unknown",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Für spätere S3-Unterstützung vorgemerkt.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "aws_s3",
+    "displayName": "Amazon S3",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Optional später über separaten S3-Connector.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "minio",
+    "displayName": "MinIO",
+    "category": "selbst gehostete Server",
+    "region": "lokal/global",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Token",
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Später eher über S3-API statt WebDAV.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "synology_webdav",
+    "displayName": "Synology NAS",
+    "category": "NAS",
+    "region": "lokal/global",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "WebDAV über Synology-WebDAV-Server oder SMB/SFTP.",
+    "securityWarnings": [
+      "Zertifikate und Reverse-Proxy-Konfiguration prüfen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "qnap_webdav",
+    "displayName": "QNAP NAS",
+    "category": "NAS",
+    "region": "lokal/global",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "WebDAV, SMB und FTP je nach NAS-Konfiguration.",
+    "securityWarnings": [
+      "Internetfreigaben nur mit Härtung und HTTPS."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "truenas",
+    "displayName": "TrueNAS",
+    "category": "NAS",
+    "region": "lokal/global",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Geeignet für SMB, SFTP und WebDAV je nach Plugins.",
+    "securityWarnings": [
+      "Servereinstellungen manuell prüfen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "openmediavault",
+    "displayName": "OpenMediaVault",
+    "category": "NAS",
+    "region": "lokal",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Lokales NAS mit variabler Plugin-Landschaft.",
+    "securityWarnings": [
+      "Protokolle nur lokal oder abgesichert freigeben."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "unraid",
+    "displayName": "Unraid",
+    "category": "NAS",
+    "region": "lokal/global",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "SMB/SFTP wahrscheinlich praktikabler als WebDAV.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "fritz_nas",
+    "displayName": "FRITZ!NAS",
+    "category": "Fritz!NAS",
+    "region": "lokal",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort"
+    ],
+    "notes": "Primär für lokale NAS-/Freigabefunktionen; später SMB/FTP prüfen.",
+    "securityWarnings": [
+      "Fernzugriff nur abgesichert verwenden."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "raspberry_pi_samba",
+    "displayName": "Raspberry Pi Samba Share",
+    "category": "selbst gehostete Server",
+    "region": "lokal",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "SMB/CIFS-Freigabe für Heimnetz und Bastelserver.",
+    "securityWarnings": [
+      "Nur im lokalen Netz freigeben."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "apache_webdav",
+    "displayName": "Apache WebDAV",
+    "category": "WebDAV direkt",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token",
+      "manuelle URL"
+    ],
+    "notes": "Generische WebDAV-Implementierung auf Apache-Servern.",
+    "securityWarnings": [
+      "Nur mit HTTPS und sauberer Authentifizierung."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "nginx_webdav",
+    "displayName": "Nginx WebDAV",
+    "category": "WebDAV direkt",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token",
+      "manuelle URL"
+    ],
+    "notes": "Generische WebDAV-Implementierung auf Nginx-Servern.",
+    "securityWarnings": [
+      "Nur mit HTTPS und sauberer Authentifizierung."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "sabredav",
+    "displayName": "SabreDAV",
+    "category": "WebDAV direkt",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token",
+      "manuelle URL"
+    ],
+    "notes": "Häufige Basis für WebDAV-Implementierungen.",
+    "securityWarnings": [
+      "Serverkompatibilität testen."
+    ],
+    "status": "verified"
+  },
+  {
+    "providerId": "drupal_webdav",
+    "displayName": "Drupal WebDAV",
+    "category": "WebDAV direkt",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Plugin- bzw. Modulabhängig.",
+    "securityWarnings": [
+      "Nur bei dokumentierter Instanz aktivieren."
+    ],
+    "status": "unknown"
+  },
+  {
+    "providerId": "sharepoint_webdav",
+    "displayName": "SharePoint / WebDAV alt",
+    "category": "manuelle Server",
+    "region": "global",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "experimental",
+    "defaultUrl": null,
+    "loginType": [
+      "OAuth",
+      "Benutzername/Passwort"
+    ],
+    "notes": "Historisch teils per WebDAV erreichbar, besser später mit API behandeln.",
+    "securityWarnings": [
+      "Kompatibilität und Authentifizierung können problematisch sein."
+    ],
+    "status": "experimental"
+  },
+  {
+    "providerId": "school_nextcloud",
+    "displayName": "Schulcloud / Nextcloud",
+    "category": "Uni-/Schulcloud",
+    "region": "EU",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Viele Schulclouds basieren auf Nextcloud oder ownCloud.",
+    "securityWarnings": [
+      "URL nur nach Freigabe der Institution speichern."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "university_owncloud",
+    "displayName": "Universitäts-ownCloud",
+    "category": "Uni-/Schulcloud",
+    "region": "EU",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Viele Hochschulen nutzen eigene ownCloud-Instanzen.",
+    "securityWarnings": [
+      "Sicherheitsrichtlinien der Einrichtung beachten."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "powerfolder",
+    "displayName": "PowerFolder",
+    "category": "europäische Anbieter",
+    "region": "DE",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token"
+    ],
+    "notes": "In vielen Enterprise-/Edu-Installationen vorhanden.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "luckycloud",
+    "displayName": "luckycloud",
+    "category": "europäische Anbieter",
+    "region": "DE",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Datensouveränität-orientierter deutscher Anbieter.",
+    "securityWarnings": [
+      "WebDAV-Endpunkt offen gelassen bis zur Verifikation."
+    ],
+    "status": "unknown"
+  },
+  {
+    "providerId": "magenta_cloud",
+    "displayName": "MagentaCLOUD",
+    "category": "europäische Anbieter",
+    "region": "DE",
+    "freeUsable": "yes",
+    "freeStorage": "15 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "OAuth"
+    ],
+    "notes": "Für spätere Prüfung vorbereitet.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "gmx_cloud",
+    "displayName": "GMX Cloud",
+    "category": "europäische Anbieter",
+    "region": "DE",
+    "freeUsable": "yes",
+    "freeStorage": "2 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort"
+    ],
+    "notes": "Für spätere Prüfung vorbereitet.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "webde_cloud",
+    "displayName": "WEB.DE Cloud",
+    "category": "europäische Anbieter",
+    "region": "DE",
+    "freeUsable": "yes",
+    "freeStorage": "2 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort"
+    ],
+    "notes": "Für spätere Prüfung vorbereitet.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "mailde_cloud",
+    "displayName": "mail.de Cloud",
+    "category": "europäische Anbieter",
+    "region": "DE",
+    "freeUsable": "yes",
+    "freeStorage": "2 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort"
+    ],
+    "notes": "Für spätere Prüfung vorbereitet.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "proton_drive",
+    "displayName": "Proton Drive",
+    "category": "europäische Anbieter",
+    "region": "CH",
+    "freeUsable": "yes",
+    "freeStorage": "5 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token"
+    ],
+    "notes": "API oder native Apps wären später relevanter als WebDAV.",
+    "securityWarnings": [],
+    "status": "verified"
+  },
+  {
+    "providerId": "tresorit",
+    "displayName": "Tresorit",
+    "category": "europäische Anbieter",
+    "region": "CH/EU",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token"
+    ],
+    "notes": "Datenschutzorientiert, aber nicht als WebDAV-Provider geführt.",
+    "securityWarnings": [],
+    "status": "verified"
+  },
+  {
+    "providerId": "jottacloud",
+    "displayName": "Jottacloud",
+    "category": "europäische Anbieter",
+    "region": "NO",
+    "freeUsable": "yes",
+    "freeStorage": "5 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token"
+    ],
+    "notes": "Für spätere Prüfung vorbereitet.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "nordu_net_cloud",
+    "displayName": "Nordu.net / Research Cloud",
+    "category": "Uni-/Schulcloud",
+    "region": "EU",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "OAuth",
+      "Benutzername/Passwort"
+    ],
+    "notes": "Vorbereitung für Forschungs- und Hochschulumgebungen.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "cernbox",
+    "displayName": "CERNBox",
+    "category": "Uni-/Schulcloud",
+    "region": "CH",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "OAuth",
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "ownCloud-/Science-Cloud-ähnliches Umfeld, Endpunkte kontenspezifisch.",
+    "securityWarnings": [
+      "Nur institutionell freigegebene URLs übernehmen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "campus_cloud_generic",
+    "displayName": "Campus-Cloud (generisch)",
+    "category": "Uni-/Schulcloud",
+    "region": "global",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "OAuth",
+      "manuelle URL"
+    ],
+    "notes": "Platzhalter für institutionelle Cloud-Angebote.",
+    "securityWarnings": [
+      "Nur verifizierte Institutionseinträge speichern."
+    ],
+    "status": "unknown"
+  },
+  {
+    "providerId": "hetzner_storage_box",
+    "displayName": "Hetzner Storage Box",
+    "category": "europäische Anbieter",
+    "region": "DE/FI",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "yes",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "WebDAV/SFTP/SMB möglich, Host je Storage Box individuell.",
+    "securityWarnings": [
+      "Host und Zertifikat pro Storage Box prüfen."
+    ],
+    "status": "community"
+  },
+  {
+    "providerId": "ovh_cloud_archive",
+    "displayName": "OVHcloud Archive/Storage",
+    "category": "europäische Anbieter",
+    "region": "EU",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Token",
+      "Benutzername/Passwort"
+    ],
+    "notes": "Später eher als Objekt- oder Spezial-Storage einordnen.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "infomaniak_kdrive",
+    "displayName": "Infomaniak kDrive",
+    "category": "europäische Anbieter",
+    "region": "CH",
+    "freeUsable": "yes",
+    "freeStorage": "15 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort",
+      "OAuth"
+    ],
+    "notes": "Für spätere Prüfung vorbereitet.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "strato_hidrive",
+    "displayName": "STRATO HiDrive",
+    "category": "europäische Anbieter",
+    "region": "DE",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "App-Passwort"
+    ],
+    "notes": "Für spätere Prüfung vorbereitet.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "seedr",
+    "displayName": "Seedr",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "2 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "Token"
+    ],
+    "notes": "Vorbereitet, aber noch nicht verifiziert.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "mediafire",
+    "displayName": "MediaFire",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "10 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "OAuth"
+    ],
+    "notes": "Keine WebDAV-Standardintegration vorgesehen.",
+    "securityWarnings": [],
+    "status": "verified"
+  },
+  {
+    "providerId": "4shared",
+    "displayName": "4shared",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "15 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort"
+    ],
+    "notes": "Vorbereitet, aber noch nicht verifiziert.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "terabox",
+    "displayName": "TeraBox",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "1024 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "OAuth"
+    ],
+    "notes": "Vorbereitet, aber noch nicht verifiziert.",
+    "securityWarnings": [
+      "Datenschutz- und Jurisdiktionsprüfung empfohlen."
+    ],
+    "status": "unknown"
+  },
+  {
+    "providerId": "degoo",
+    "displayName": "Degoo",
+    "category": "freie Cloudspeicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "20 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "OAuth"
+    ],
+    "notes": "Vorbereitet, aber noch nicht verifiziert.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "adrive",
+    "displayName": "ADrive",
+    "category": "freie Cloudspeicher",
+    "region": "US",
+    "freeUsable": "yes",
+    "freeStorage": "50 GB",
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort"
+    ],
+    "notes": "Vorbereitet, aber noch nicht verifiziert.",
+    "securityWarnings": [],
+    "status": "unknown"
+  },
+  {
+    "providerId": "sync_com",
+    "displayName": "Sync.com",
+    "category": "freie Cloudspeicher",
+    "region": "CA",
+    "freeUsable": "yes",
+    "freeStorage": "5 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort"
+    ],
+    "notes": "Keine WebDAV-Standardintegration vorgesehen.",
+    "securityWarnings": [],
+    "status": "verified"
+  },
+  {
+    "providerId": "leboncoin_cloud",
+    "displayName": "Private Cloud (generic EU hosted)",
+    "category": "europäische Anbieter",
+    "region": "EU",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "unknown",
+    "defaultUrl": null,
+    "loginType": [
+      "Benutzername/Passwort",
+      "manuelle URL"
+    ],
+    "notes": "Neutraler Platzhalter für kleine europäische Hoster mit WebDAV.",
+    "securityWarnings": [
+      "Vor Einsatz Anbieter und Endpunkt verifizieren."
+    ],
+    "status": "unknown"
+  },
+  {
+    "providerId": "oracle_object_storage",
+    "displayName": "Oracle Object Storage",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "unknown",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Optional später per S3-Connector.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "scaleway_object_storage",
+    "displayName": "Scaleway Object Storage",
+    "category": "S3-kompatible Speicher",
+    "region": "EU",
+    "freeUsable": "unknown",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Optional später per S3-Connector.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "storj",
+    "displayName": "Storj",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "yes",
+    "freeStorage": "25 GB",
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Optional später per S3-Connector.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "linode_object_storage",
+    "displayName": "Akamai/Linode Object Storage",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Optional später per S3-Connector.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "vultr_object_storage",
+    "displayName": "Vultr Object Storage",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Optional später per S3-Connector.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "digitalocean_spaces",
+    "displayName": "DigitalOcean Spaces",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Optional später per S3-Connector.",
+    "securityWarnings": [],
+    "status": "community"
+  },
+  {
+    "providerId": "rackspace_cloud_files",
+    "displayName": "Rackspace Cloud Files",
+    "category": "S3-kompatible Speicher",
+    "region": "global",
+    "freeUsable": "no",
+    "freeStorage": null,
+    "webdavSupport": "no",
+    "defaultUrl": null,
+    "loginType": [
+      "Token"
+    ],
+    "notes": "Optional später über Objekt-Storage-Adapter.",
+    "securityWarnings": [],
+    "status": "community"
+  }
+]
