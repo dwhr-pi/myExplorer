@@ -8,6 +8,7 @@ MyExplorer speichert sensible Daten nach dem Prinzip: so wenig wie möglich, so 
 - Passwörter, Tokens, App-Passwörter und private Schlüssel werden nicht im Klartext gespeichert.
 - Secrets werden über Android Keystore und verschlüsselte lokale Stores abgelegt.
 - Alte Tokens sollen im Sicherheitscenter sichtbar und löschbar werden.
+- Das Fehlerreporting nutzt nur eine SMTP-Credential-Referenz; das echte Mail-Passwort wird nicht im Repository gespeichert.
 
 ## Backup
 

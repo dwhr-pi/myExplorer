@@ -19,6 +19,7 @@ import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material.icons.rounded.Terminal
 import androidx.compose.material3.AssistChip
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -45,6 +46,7 @@ import androidx.compose.ui.unit.dp
 import com.dwhr.myexplorer.data.model.AppThemeMode
 import com.dwhr.myexplorer.data.model.CloudProfile
 import com.dwhr.myexplorer.data.model.CloudProvider
+import com.dwhr.myexplorer.data.update.UpdateStatus
 
 private data class Destination(
     val label: String,
@@ -57,6 +59,7 @@ fun MyExplorerApp(
     state: MyExplorerState,
     onThemeModeChanged: (AppThemeMode) -> Unit,
     onDynamicColorChanged: (Boolean) -> Unit,
+    onSendErrorReport: () -> Unit,
 ) {
     val destinations = listOf(
         Destination("Start", Icons.Rounded.Home),
@@ -102,7 +105,7 @@ fun MyExplorerApp(
                 1 -> FilesScreen(innerPadding)
                 2 -> CloudScreen(innerPadding, state.providers, state.profiles)
                 3 -> NetworkScreen(innerPadding)
-                4 -> ToolsScreen(innerPadding)
+                4 -> ToolsScreen(innerPadding, state, onSendErrorReport)
                 else -> SettingsScreen(innerPadding, state, onThemeModeChanged, onDynamicColorChanged)
             }
         }
@@ -136,6 +139,15 @@ private fun OverviewScreen(
             ) {
                 MetricCard("Provider", state.providers.size.toString(), Modifier.weight(1f))
                 MetricCard("Profile", state.profiles.size.toString(), Modifier.weight(1f))
+            }
+        }
+        item {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                MetricCard("Fehlerlogs", state.errorLogCount.toString(), Modifier.weight(1f))
+                MetricCard("Kanal", state.appConfig?.updates?.channel ?: "alpha", Modifier.weight(1f))
             }
         }
         item {
@@ -286,7 +298,11 @@ private fun NetworkScreen(innerPadding: PaddingValues) {
 }
 
 @Composable
-private fun ToolsScreen(innerPadding: PaddingValues) {
+private fun ToolsScreen(
+    innerPadding: PaddingValues,
+    state: MyExplorerState,
+    onSendErrorReport: () -> Unit,
+) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -317,6 +333,22 @@ private fun ToolsScreen(innerPadding: PaddingValues) {
                     "RDP nur als Remote-Zugriff erwähnen, nicht als Sync-Weg",
                 ),
             )
+        }
+        item {
+            RoadmapCard(
+                title = "Fehlerprotokoll",
+                lines = listOf(
+                    "Produktkennung: ${state.appConfig?.productId ?: "myexplorer-android-alpha"}",
+                    "Zieladresse: ${state.appConfig?.errorReporting?.recipientEmail ?: "nicht geladen"}",
+                    "SMTP-Passwort nur als Keystore-Referenz",
+                    "Versand per sichtbarem Email-Intent vorbereitet",
+                ),
+            )
+        }
+        item {
+            Button(onClick = onSendErrorReport) {
+                Text("Fehlerprotokoll per Email senden")
+            }
         }
     }
 }
@@ -363,6 +395,16 @@ private fun SettingsScreen(
         }
         item {
             RoadmapCard(
+                title = "Updateprüfung",
+                lines = listOf(
+                    updateStatusText(state.updateStatus),
+                    "Alpha-Versionen funktionieren über ein eigenes HTTPS-Update-Manifest.",
+                    "Play Store ist später optional über Play Core möglich.",
+                ),
+            )
+        }
+        item {
+            RoadmapCard(
                 title = "Datenschutz",
                 lines = listOf(
                     "Keine Werbung",
@@ -373,6 +415,14 @@ private fun SettingsScreen(
             )
         }
     }
+}
+
+private fun updateStatusText(status: UpdateStatus): String = when (status) {
+    UpdateStatus.NotConfigured -> "Noch kein Update-Manifest konfiguriert."
+    UpdateStatus.Checking -> "Updateprüfung läuft."
+    is UpdateStatus.UpToDate -> "Aktuell: ${status.currentVersionName}"
+    is UpdateStatus.Available -> "Update verfügbar: ${status.latestVersionName}"
+    is UpdateStatus.Failed -> "Updateprüfung fehlgeschlagen: ${status.message}"
 }
 
 @Composable

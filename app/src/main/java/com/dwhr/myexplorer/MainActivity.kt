@@ -27,6 +27,7 @@ class MainActivity : ComponentActivity() {
                     state = state,
                     onThemeModeChanged = viewModel::setThemeMode,
                     onDynamicColorChanged = viewModel::setDynamicColor,
+                    onSendErrorReport = viewModel::sendErrorReport,
                 )
             }
         }

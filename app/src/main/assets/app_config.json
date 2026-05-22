@@ -1,0 +1,18 @@
+{
+  "productId": "myexplorer-android-alpha",
+  "applicationId": "com.dwhr.myexplorer",
+  "displayName": "MyExplorer",
+  "errorReporting": {
+    "enabled": true,
+    "recipientEmail": "ai-chat-to-markdown@web.de",
+    "subjectPrefix": "[MyExplorer Android Alpha]",
+    "smtpUsername": "ai-chat-to-markdown@web.de",
+    "smtpPasswordCredentialRef": "credential:error-reporting:webde:smtp-password",
+    "automaticSmtpSendingEnabled": false
+  },
+  "updates": {
+    "channel": "alpha",
+    "manifestUrl": null,
+    "allowNonPlayStoreUpdates": true
+  }
+}

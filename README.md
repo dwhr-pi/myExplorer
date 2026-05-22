@@ -21,6 +21,8 @@ Bereits angelegt:
 - Datenmodelle für Cloud-Profile und Export-/Import-Payloads
 - AES-256-GCM-Backup-Verschlüsselung mit PBKDF2-Härtung
 - Compose-Oberfläche für Cloud-Katalog, Transfer, Sicherheitscenter und Datenschutz
+- lokales Fehlerprotokoll mit eindeutiger Produktkennung und Email-Versand über Mail-App
+- Alpha-taugliche Updateprüfung über optionales HTTPS-Manifest
 
 ## Projektziele
 
@@ -48,6 +50,12 @@ Passwörter, Tokens, App-Passwörter und private Schlüssel dürfen nicht im Kla
 
 Exportdaten werden per AES-256-GCM verschlüsselt. HTTP-Verbindungen sollen sichtbar gewarnt werden, HTTPS hat Vorrang. Die App enthält keine Werbung, keine Telemetrie und keine Tracker.
 
+Fehlerberichte werden lokal als JSONL protokolliert und können sichtbar per Mail-App an die konfigurierte Protokolladresse gesendet werden. Das SMTP-Passwort wird nicht im Repository gespeichert; die Config enthält nur eine Keystore-Referenz.
+
+## Alpha-Updates
+
+Updates funktionieren auch ohne Play Store über ein eigenes HTTPS-Manifest. Für die aktuelle Alpha ist der Manifest-Link noch leer; sobald eine APK oder Release-Seite existiert, wird `updates.manifestUrl` in `app/src/main/assets/app_config.json` gesetzt.
+
 ## Eigenständigkeit
 
 MyExplorer ist keine Xiaomi-App, kein Mi-File-Manager-Klon und nutzt weder Xiaomi-Code noch Xiaomi-Marken oder geschützte UI-Elemente. Das orange Design ist eine eigene Open-Source-Identität, passend für orange angepasste Android-, Linux- oder Windows-Setups.
@@ -65,6 +73,8 @@ MyExplorer ist keine Xiaomi-App, kein Mi-File-Manager-Klon und nutzt weder Xiaom
 - `docs/ORANGE_DESIGN_SYSTEM.md`
 - `docs/ROADMAP.md`
 - `docs/PRIVACY.md`
+- `docs/ERROR_REPORTING.md`
+- `docs/UPDATE_CHECKS.md`
 
 ## Hinweis zum Implementierungsstatus
 
