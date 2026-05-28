@@ -75,6 +75,11 @@ MyExplorer ist keine Xiaomi-App, kein Mi-File-Manager-Klon und nutzt weder Xiaom
 - `docs/PRIVACY.md`
 - `docs/ERROR_REPORTING.md`
 - `docs/UPDATE_CHECKS.md`
+- `docs/BUILD_APK.md`
+
+## APK bauen
+
+Lokal kann die Alpha-APK mit `gradle assembleDebug` gebaut werden. Alternativ ist ein GitHub-Actions-Workflow vorbereitet, der nach dem Upload zu GitHub die APK als Artefakt `MyExplorer-alpha-debug-apk` bereitstellt.
 
 ## Hinweis zum Implementierungsstatus
 
