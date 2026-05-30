@@ -1,8 +1,10 @@
 *.iml
 .gradle/
+.gradle-local/
 /local.properties
 /.idea/
 /build/
 /app/build/
+build-apk.log
 captures/
 .DS_Store

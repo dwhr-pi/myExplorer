@@ -7,17 +7,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.weight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Cloud
-import androidx.compose.material.icons.rounded.Folder
-import androidx.compose.material.icons.rounded.Home
-import androidx.compose.material.icons.rounded.Settings
-import androidx.compose.material.icons.rounded.Share
-import androidx.compose.material.icons.rounded.Terminal
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -25,7 +17,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -40,7 +31,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.dwhr.myexplorer.data.model.AppThemeMode
@@ -50,7 +40,7 @@ import com.dwhr.myexplorer.data.update.UpdateStatus
 
 private data class Destination(
     val label: String,
-    val icon: ImageVector,
+    val marker: String,
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -62,12 +52,12 @@ fun MyExplorerApp(
     onSendErrorReport: () -> Unit,
 ) {
     val destinations = listOf(
-        Destination("Start", Icons.Rounded.Home),
-        Destination("Dateien", Icons.Rounded.Folder),
-        Destination("Cloud", Icons.Rounded.Cloud),
-        Destination("Netzwerk", Icons.Rounded.Share),
-        Destination("Werkzeuge", Icons.Rounded.Terminal),
-        Destination("Einstellungen", Icons.Rounded.Settings),
+        Destination("Start", "S"),
+        Destination("Dateien", "D"),
+        Destination("Cloud", "C"),
+        Destination("Netzwerk", "N"),
+        Destination("Werkzeuge", "W"),
+        Destination("Einstellungen", "E"),
     )
     var selectedIndex by remember { mutableIntStateOf(0) }
 
@@ -92,7 +82,7 @@ fun MyExplorerApp(
                     NavigationBarItem(
                         selected = selectedIndex == index,
                         onClick = { selectedIndex = index },
-                        icon = { Icon(destination.icon, contentDescription = destination.label) },
+                        icon = { Text(destination.marker, fontWeight = FontWeight.Bold) },
                         label = { Text(destination.label) },
                     )
                 }
